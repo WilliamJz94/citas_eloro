@@ -1,60 +1,58 @@
 <?php
-  require '../assets/db/config.php';
+require '../assets/db/config.php';
 
-  if(isset($_POST['login'])) {
+if (isset($_POST['login'])) {
     $errMsg = '';
 
     // Get data from FORM
     $usuario = $_POST['usuario'];
-    
+
     $clave = MD5($_POST['clave']);
 
-    if($usuario == '')
-      $errMsg = 'Digite su usuario';
-    if($clave == '')
-      $errMsg = 'Digite su contraseña';
-
-    if($errMsg == '') {
-      try {
-$stmt = $connect->prepare('SELECT id, nombre, usuario, email,clave, cargo FROM usuarios WHERE usuario = :usuario UNION SELECT codpaci, nombrep, usuario, email, clave,cargo FROM customers  WHERE usuario = :usuario');
-
-        $stmt->execute(array(
-          ':usuario' => $usuario
-          
-          
-          ));
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if($data == false){
-          $errMsg = "Usuario $usuario no encontrado.";
-        }
-        else {
-          if($clave == $data['clave']) {
-
-            $_SESSION['id'] = $data['id'];
-            $_SESSION['nombre'] = $data['nombre'];
-            $_SESSION['usuario'] = $data['usuario'];
-            $_SESSION['email'] = $data['email'];
-            $_SESSION['clave'] = $data['clave'];
-            $_SESSION['cargo'] = $data['cargo'];
-            
-            
-    if($_SESSION['cargo'] == 1){
-          header('Location: admin/pages-admin.php');
-        }else if($_SESSION['cargo'] == 2){
-          header('Location: user-patients/patiens-mostrar.php');
-        }
-            exit;
-          }
-          else
-            $errMsg = 'Contraseña incorrecta.';
-        }
-      }
-      catch(PDOException $e) {
-        $errMsg = $e->getMessage();
-      }
+    if ($usuario == '') {
+        $errMsg = 'Digite su usuario';
     }
-  }
+    if ($clave == '') {
+        $errMsg = 'Digite su contraseña';
+    }
+
+    if ($errMsg == '') {
+        try {
+            $stmt = $connect->prepare(
+                'SELECT id, nombre, usuario, email,clave, cargo FROM usuarios WHERE usuario = :usuario UNION SELECT codpaci, nombrep, usuario, email, clave,cargo FROM customers  WHERE usuario = :usuario'
+            );
+
+            $stmt->execute([
+                ':usuario' => $usuario,
+            ]);
+            $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($data == false) {
+                $errMsg = "Usuario $usuario no encontrado.";
+            } else {
+                if ($clave == $data['clave']) {
+                    $_SESSION['id'] = $data['id'];
+                    $_SESSION['nombre'] = $data['nombre'];
+                    $_SESSION['usuario'] = $data['usuario'];
+                    $_SESSION['email'] = $data['email'];
+                    $_SESSION['clave'] = $data['clave'];
+                    $_SESSION['cargo'] = $data['cargo'];
+
+                    if ($_SESSION['cargo'] == 1) {
+                        header('Location: admin/pages-admin.php');
+                    } elseif ($_SESSION['cargo'] == 2) {
+                        header('Location: user-patients/patiens-mostrar.php');
+                    }
+                    exit();
+                } else {
+                    $errMsg = 'Contraseña incorrecta.';
+                }
+            }
+        } catch (PDOException $e) {
+            $errMsg = $e->getMessage();
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
@@ -72,12 +70,28 @@ $stmt = $connect->prepare('SELECT id, nombre, usuario, email,clave, cargo FROM u
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <!---->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+
 
 </head>
 
 <body>
 
+<nav class="navbar navbar-light navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a href="../inicio.php" class="navbar-brand">Inicio</a>
+            <form class="d-flex">
 
+                <a href="../vista/page-registro.php" class="btn btn-success" type="submit">Registrate en linea</a>
+            </form>
+        </div>
+    </nav>
 
  
 
@@ -98,17 +112,19 @@ $stmt = $connect->prepare('SELECT id, nombre, usuario, email,clave, cargo FROM u
                             <h1 class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
                                 LOGIN
                             </h1>
-                            <?php
-    if(isset($errMsg)){
-    echo '<div style="color:#FF0000;text-align:center;font-size:20px;">'.$errMsg.'</div>';  
-         }
-?>
+                            <?php if (isset($errMsg)) {
+                                echo '<div style="color:#FF0000;text-align:center;font-size:20px;">' .
+                                    $errMsg .
+                                    '</div>';
+                            } ?>
                             <label class="block text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">Usuario</span>
                                 <input
                                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                     placeholder="Digita tu Usuario" name="usuario"
-                                    value="<?php if(isset($_POST['usuario'])) echo $_POST['usuario'] ?>"
+                                    value="<?php if (isset($_POST['usuario'])) {
+                                        echo $_POST['usuario'];
+                                    } ?>"
                                     autocomplete="off" />
                             </label>
                             <label class="block mt-4 text-sm">
@@ -116,7 +132,9 @@ $stmt = $connect->prepare('SELECT id, nombre, usuario, email,clave, cargo FROM u
                                 <input
                                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                     placeholder="Digita tu contraseña" type="password" required="true" name="clave"
-                                    value="<?php if(isset($_POST['clave'])) echo MD5($_POST['clave']) ?>" />
+                                    value="<?php if (isset($_POST['clave'])) {
+                                        echo MD5($_POST['clave']);
+                                    } ?>" />
                             </label>
                             <hr class="my-8" />
                             <button
