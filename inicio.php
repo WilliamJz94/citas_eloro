@@ -134,46 +134,7 @@
     <!-- banner end -->
 
 
-    <section class="section clearfix no-view secPadding" data-animation-effect="fadeIn">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 id="about" class="title text-center"><span></span></h1> <br>
-                    
-                    <div class="space"></div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="assets/img/medico.jpg" alt="">
-                            <div class="space"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <p>Lorem ipsum dolor sit amet, cadipisicing sit amet, consectetur adipisicing elit. Atque
-                                sed, quidem quis praesentium, ut unde fuga error commodi architecto, laudantium culpa
-                                tenetur at id, beatae pet.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. adipisicing sit amet,
-                                consectetur adipisicing elit. Atque sed, quidem quis praesentium,m deserunt.</p>
-                            <!--<ul class="list-unstyled">
-                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Lorem ipsum enimdolor sit
-                                    amet</li>
-                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Explicabo deleniti neque
-                                    aliquid</li>
-                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Consectetur adipisicing elit
-                                </li>
-                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Lorem ipsum dolor sit amet
-                                </li>
-                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Quo issimos molest quibusdam
-                                    temporibus</li>
-                            </ul>-->
-                        </div>
-                    </div>
-                    <div class="space"></div>
-                   
-                   
-                    
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
 
     <!-- section start -->
@@ -277,7 +238,46 @@
     </section>
     <!-- section end -->
 
-
+    <section class="section clearfix no-view secPadding" data-animation-effect="fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 id="about" class="title text-center"><span></span></h1> <br>
+                    
+                    <div class="space"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="assets/img/medico.jpg" alt="">
+                            <div class="space"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Lorem ipsum dolor sit amet, cadipisicing sit amet, consectetur adipisicing elit. Atque
+                                sed, quidem quis praesentium, ut unde fuga error commodi architecto, laudantium culpa
+                                tenetur at id, beatae pet.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. adipisicing sit amet,
+                                consectetur adipisicing elit. Atque sed, quidem quis praesentium,m deserunt.</p>
+                            <!--<ul class="list-unstyled">
+                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Lorem ipsum enimdolor sit
+                                    amet</li>
+                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Explicabo deleniti neque
+                                    aliquid</li>
+                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Consectetur adipisicing elit
+                                </li>
+                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Lorem ipsum dolor sit amet
+                                </li>
+                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Quo issimos molest quibusdam
+                                    temporibus</li>
+                            </ul>-->
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                   
+                   
+                    
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- footer start -->
     <footer id="footer">
 
