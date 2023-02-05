@@ -69,8 +69,8 @@
                                         id="navbar-collapse-1">
                                         <ul class="nav navbar-nav navbar-right">
                                             <li class="active"><a href="#banner">Inicio</a></li>
-                                            <li><a href="#about">Nosotros</a></li>
                                             <li><a href="#especialidades">Especialidades</a></li>
+                                            <li><a href="#about">Nosotros</a></li>
                                             <li><a href="vista/page-login.php">LOGIN</a></li>
                                             <li><a href="vista/page-registro.php">REGISTRO EN LINEA</a></li>
                                        
@@ -115,8 +115,7 @@
                     <div class="caption-data" style="margin-top: 0px; opacity: 1;" data-animation-effect="fadeIn">
                         <h1>HOSPITAL BÁSICO ZONA EL ORO</h1>
 
-                        <p>Hospital El Oro dispone de un grupo de profesionales médicos con gran experiencia profesional
-                            y sobre todo la atención médica es de calidad y eficiencia.</p>
+                        <p></p>
 
 
 
@@ -180,7 +179,7 @@
                         <div class="media-body">
                             <h3 class="media-heading">Odontología</h3>
                             <blockquote>
-                                <p>Dolor sit amet, consectetur adipisicing elit. Iure aperiam consequatur placeat.</p>
+                                <p>Àrea médica dedicada al estudio de los dientes y las estructuras anejas y al tratamiento de las enfermedades que les afectan.</p>
 
                             </blockquote>
                         </div>
@@ -196,7 +195,7 @@
                         <div class="media-body">
                             <h3 class="media-heading">Medicina General</h3>
                             <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure aperiam consequatur.
+                                <p>Consultas mèdicas de todas las enfermedades en general.
                                 </p>
 
                             </blockquote>
@@ -211,7 +210,7 @@
                         <div class="media-body">
                             <h3 class="media-heading">Ginecología</h3>
                             <blockquote>
-                                <p>Forem ipsum dolor sit amet, consectetur adipisicing elit. Iure aperiam consequatur.
+                                <p>Es una rama de la medicina que se encarga del estudio, diagnóstico y tratamiento de las enfermedades de la mujer.
                                 </p>
 
                             </blockquote>
@@ -226,7 +225,7 @@
                         <div class="media-body">
                             <h3 class="media-heading">Reumatología</h3>
                             <blockquote>
-                                <p>Norem ipsum dolor sit amet, consectetur adipisicing elit. Iure aperiam consequatur.
+                                <p>La reumatología es una disciplina de la Medicina Interna que se especializa en el diagnóstico y tratamiento de enfermedades que afectan a las articulaciones, los músculos, tendones y huesos.
                                 </p>
 
                             </blockquote>
@@ -251,23 +250,11 @@
                             <div class="space"></div>
                         </div>
                         <div class="col-md-6">
-                            <p>Lorem ipsum dolor sit amet, cadipisicing sit amet, consectetur adipisicing elit. Atque
-                                sed, quidem quis praesentium, ut unde fuga error commodi architecto, laudantium culpa
-                                tenetur at id, beatae pet.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. adipisicing sit amet,
-                                consectetur adipisicing elit. Atque sed, quidem quis praesentium,m deserunt.</p>
-                            <!--<ul class="list-unstyled">
-                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Lorem ipsum enimdolor sit
-                                    amet</li>
-                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Explicabo deleniti neque
-                                    aliquid</li>
-                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Consectetur adipisicing elit
-                                </li>
-                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Lorem ipsum dolor sit amet
-                                </li>
-                                <li><i class="fa fa-arrow-circle-right pr-10 colored"></i> Quo issimos molest quibusdam
-                                    temporibus</li>
-                            </ul>-->
+                            <p>Hospital El Oro dispone de un grupo de profesionales médicos con gran experiencia profesional
+                            y sobre todo la atención médica es de calidad y eficiencia.</p>
+
+                            <p></p>
+                            
                         </div>
                     </div>
                     <div class="space"></div>
