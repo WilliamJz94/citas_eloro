@@ -148,6 +148,21 @@ if (isset($_POST['login'])) {
         </div>
     </div>
 
+    <footer id="footer">
+
+<!-- .subfooter start -->
+<div class="subfooter bg-primary">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center text-white">Copyright-2023-Hospital El Oro <a>Sistema de Citas Médicas</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- .subfooter end -->
+
+</footer>
  
 </body>
 
