@@ -487,7 +487,10 @@ $events = $req->fetchAll();
               <!-- Theme toggler -->
              
               <!-- Notifications menu -->
-              
+              <span class="">
+                            <?php echo ucfirst($_SESSION['nombre']); ?><br>
+                            <span class="user-level">Administrador</span>
+                        </span>
               <!-- Profile menu -->
               <li class="relative">
                 <button

@@ -42,7 +42,13 @@ if (isset($_POST['login'])) {
                         header('Location: admin/pages-admin.php');
                     } elseif ($_SESSION['cargo'] == 2) {
                         header('Location: user-patients/patiens-mostrar.php');
-                    }
+                    }else if($_SESSION['cargo'] == 3){
+                        header('Location: user-patients/medicos-mostrar.php');
+                      }
+
+
+
+
                     exit();
                 } else {
                     $errMsg = 'Contraseña incorrecta.';
