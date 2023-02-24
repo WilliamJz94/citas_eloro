@@ -437,7 +437,10 @@
               <!-- Theme toggler -->
               
               <!-- Notifications menu -->
-             
+              <span class="">
+                            <?php echo ucfirst($_SESSION['nombre']); ?><br>
+                            <span class="user-level">Administrador</span>
+                        </span>
               <!-- Profile menu -->
               <li class="relative">
                 <button
@@ -700,8 +703,8 @@
                 <select name="cargo" class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray">
                   <option>Seleccione un cargo</option>
                   <option value="1">Administrador</option>
-                  <option value="2">Doctor</option>
-                  <option value="3">Pacientes</option>
+                  <option value="2">Paciente</option>
+                  <option value="3">Médico</option>
                 </select>
               </label>
 
