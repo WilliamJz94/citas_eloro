@@ -344,7 +344,7 @@
                             <?php
                 
                     $con = connect();
-                    $sql = "SELECT citas.codcit, citas.asunto, citas.color,customers.codpaci, customers.dnipa, customers.nombrep, customers.apellidop, medico.coddoc, medico.dnidoc, medico.apedoc,medico.nomdoc, especialidades.codespe, especialidades.especialidad, citas.start, citas.end, citas.estado, citas.fecha_create FROM citas INNER JOIN customers ON citas.codpaci = customers.codpaci INNER JOIN medico ON citas.coddoc = medico.coddoc INNER JOIN especialidades ON citas.codespe = especialidades.codespe WHERE customers.codpaci='$id'";
+                    $sql = "SELECT citas.codcit, citas.asunto, citas.especialidad, citas.start FROM citas INNER JOIN customers WHERE citas.codpaci='$id'";
                         $query  =$con->query($sql);
                         $data =  array();
                         if($query){
@@ -359,9 +359,9 @@
                                     <tr
                                         class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
 
-                                        <th class="px-4 py-3">Especialidad</th>
-                                        <th class="px-4 py-3">dd</th>
                                         <th class="px-4 py-3">Asunto</th>
+                                        <th class="px-4 py-3">Especialidad</th>
+                                        <th class="px-4 py-3">Hora</th>
                                         
                                     </tr>
                                 </thead>
@@ -369,32 +369,18 @@
                                     <?php foreach($data as $d):?>
                                     <tr class="text-gray-700 dark:text-gray-400">
 
-                                        <td class="px-4 py-3">
-                                            <div class="flex items-center text-sm">
-                                                <!-- Avatar with inset shadow -->
-                                                <p class="font-semibold"><?php echo $d->nombrep; ?>
-                                                    <?php echo $d->apellidop; ?></p>
-                                            </div>
-                                        </td>
-                                        <td class="px-4 py-3 text-sm">
-                                            <?php echo $d->dnipa; ?>
-                                        </td>
-
+                                     
                                         <td class="px-4 py-3 text-sm">
                                             <?php echo $d->asunto; ?>
                                         </td>
+
                                         <td class="px-4 py-3 text-sm">
                                             <?php echo $d->especialidad; ?>
                                         </td>
                                         <td class="px-4 py-3 text-sm">
-                                            <?php echo $d->nomdoc; ?> <?php echo $d->apedoc; ?>
-                                        </td>
-                                        <td class="px-4 py-3 text-sm">
                                             <?php echo $d->start; ?>
                                         </td>
-                                        <td class="px-4 py-3 text-sm">
-                                            <?php echo $d->end; ?>
-                                        </td>
+                                        
 
                                         <td class="px-4 py-3 text-xs">
                                             <?php    
@@ -421,13 +407,12 @@
 
 
                                     </tr>
+
                                     <?php endforeach; ?>
                                     <?php else:?>
-                                    <span
-                                        class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-700">
-                                        No tiene citas pendientes
-                                    </span>
+                                    
                                     <?php endif; ?>
+                                    
                                 </tbody>
                             </table>
                         </div>
