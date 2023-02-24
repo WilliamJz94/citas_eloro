@@ -344,7 +344,7 @@
                             <?php
                 
                     $con = connect();
-                    $sql = "SELECT citas.codcit, citas.asunto, citas.especialidad, citas.start FROM citas INNER JOIN customers WHERE citas.codpaci='$id'";
+                    $sql = "SELECT citas.asunto, citas.especialidad, citas.start FROM citas";
                         $query  =$con->query($sql);
                         $data =  array();
                         if($query){
