@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Hospital El Oro</title>
+    <title>Hospital El Oro 1</title>
     <meta name="description" content="Responsive HTML5 Template">
     <meta name="author" content="webthemez">
 
